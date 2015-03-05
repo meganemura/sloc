@@ -19,7 +19,8 @@ module Sloc
       end
 
       # TODO: formatted output
-      p report
+      require 'pp'
+      pp report
 
       nil
     end
