@@ -1,4 +1,5 @@
 require 'slop'
+require 'sloc/runner'
 
 module Sloc
   class CLI
@@ -12,6 +13,10 @@ module Sloc
       if paths.empty?
         return help
       end
+
+      runner = Runner.new(@options)
+
+      runner.run(paths)
     end
 
     def parse_options(args)
