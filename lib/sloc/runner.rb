@@ -37,10 +37,5 @@ module Sloc
 
       files.map {|f| File.expand_path(f) }.uniq
     end
-
-    # XXX
-    def count(path)
-      File.read(path).lines.size
-    end
   end
 end
