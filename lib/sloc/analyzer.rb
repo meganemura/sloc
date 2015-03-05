@@ -16,6 +16,16 @@ module Sloc
       result
     end
 
+    def comment_expressions(extension)
+      start, stop = block_comment_expression(extension)
+
+      {
+        :single => single_comment_expression(extension),
+        :start  => start,
+        :stop   => stop,
+      }
+    end
+
     def single_comment_expression(extension)
       case extension
       when ".rb" then /#/
