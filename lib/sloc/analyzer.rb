@@ -1,6 +1,6 @@
 module Sloc
   class Analyzer
-    def initialize(options)
+    def initialize(options = {})
       @options = options
     end
 
