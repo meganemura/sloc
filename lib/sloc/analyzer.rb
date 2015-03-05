@@ -23,5 +23,12 @@ module Sloc
       else nil
       end
     end
+
+    def block_comment_expression(extension)
+      case extension
+      when ".rb" then [/=begin/, /=end/]
+      else [nil, nil]
+      end
+    end
   end
 end
