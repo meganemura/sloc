@@ -1,6 +1,6 @@
 # Sloc
 [![Gem Version](https://badge.fury.io/rb/sloc.svg)](http://badge.fury.io/rb/sloc)
-[![Build Status](https://img.shields.io/travis/meganemura/sloc.svg?style=flat)](https://travis-ci.org/meganemura/sloc)
+[![Circle CI](https://img.shields.io/circleci/project/meganemura/sloc/master.svg)](https://circleci.com/gh/meganemura/sloc)
 [![Coverage Status](https://img.shields.io/coveralls/meganemura/sloc.svg?style=flat)](https://coveralls.io/r/meganemura/sloc?branch=master)
 [![Code Climate](https://codeclimate.com/github/meganemura/sloc/badges/gpa.svg)](https://codeclimate.com/github/meganemura/sloc)
 [![Dependency Status](https://gemnasium.com/meganemura/sloc.svg)](https://gemnasium.com/meganemura/sloc)
