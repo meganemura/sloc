@@ -9,8 +9,8 @@ module Sloc
 
       code.gsub!(/\r\n|\r/, "\n")
 
-      result[:total]       = code.scan("\n").size
-      result[:empty_lines] = code.scan(/^\s*$/).size
+      result[:total]          = code.scan("\n").size
+      result[:empty_lines]    = code.scan(/^\s*$/).size
       result[:single_comment] = code.scan(single_comment_expression(extension)).size
 
       result
