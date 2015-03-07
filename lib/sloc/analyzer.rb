@@ -11,7 +11,7 @@ module Sloc
 
       result[:total]       = code.scan("\n").size
       result[:empty_lines] = code.scan(/^\s*$/).size
-      result[:comments]    = 'N/A'  # FIXME
+      result[:single_comment] = code.scan(single_comment_expression(extension)).size
 
       result
     end
