@@ -1,2 +1,2 @@
-require "sloc/analyzer"
-require "sloc/version"
+require 'sloc/analyzer'
+require 'sloc/version'

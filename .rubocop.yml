@@ -1,1 +1,12 @@
-inherit_from: .rubocop_todo.yml
+# Configuration parameters: AllowURI, URISchemes.
+Metrics/LineLength:
+  Max: 104
+
+Style/Documentation:
+  Enabled: false
+
+Style/RegexpLiteral:
+  MaxSlashes: 0
+
+Style/TrailingComma:
+  EnforcedStyleForMultiline: comma

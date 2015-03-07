@@ -7,11 +7,9 @@ describe Sloc::Analyzer do
 
   describe '#comment_expressions' do
     it 'returns hash of expressions' do
-      expect(instance.comment_expressions('.rb')).to eq({
-        :single => /#/,
-        :start  => /=begin/,
-        :stop   => /=end/
-      })
+      expect(instance.comment_expressions('.rb')).to eq(single: /#/,
+                                                        start: /=begin/,
+                                                        stop: /=end/)
     end
   end
 end

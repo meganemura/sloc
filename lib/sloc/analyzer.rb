@@ -20,23 +20,22 @@ module Sloc
       start, stop = block_comment_expression(extension)
 
       {
-        :single => single_comment_expression(extension),
-        :start  => start,
-        :stop   => stop,
+        single: single_comment_expression(extension),
+        start: start,
+        stop: stop,
       }
     end
 
     def single_comment_expression(extension)
       case extension
-      when ".rb" then /#/
-      when ".vim" then /"/
-      else nil
+      when '.rb' then /#/
+      when '.vim' then /"/
       end
     end
 
     def block_comment_expression(extension)
       case extension
-      when ".rb" then [/=begin/, /=end/]
+      when '.rb' then [/=begin/, /=end/]
       else [nil, nil]
       end
     end
