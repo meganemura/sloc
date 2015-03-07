@@ -30,7 +30,6 @@ module Sloc
       case extension
       when ".rb" then /#/
       when ".vim" then /"/
-      else nil
       end
     end
 
