@@ -20,9 +20,9 @@ module Sloc
       start, stop = block_comment_expression(extension)
 
       {
-        :single => single_comment_expression(extension),
-        :start  => start,
-        :stop   => stop,
+        single: single_comment_expression(extension),
+        start: start,
+        stop: stop,
       }
     end
 
