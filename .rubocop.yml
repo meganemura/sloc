@@ -9,3 +9,6 @@ Style/Documentation:
 
 Style/RegexpLiteral:
   MaxSlashes: 0
+
+Style/TrailingComma:
+  EnforcedStyleForMultiline: comma
