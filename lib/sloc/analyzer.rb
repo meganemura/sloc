@@ -28,14 +28,14 @@ module Sloc
 
     def single_comment_expression(extension)
       case extension
-      when ".rb" then /#/
-      when ".vim" then /"/
+      when '.rb' then /#/
+      when '.vim' then /"/
       end
     end
 
     def block_comment_expression(extension)
       case extension
-      when ".rb" then [/=begin/, /=end/]
+      when '.rb' then [/=begin/, /=end/]
       else [nil, nil]
       end
     end
