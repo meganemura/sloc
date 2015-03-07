@@ -30,13 +30,13 @@ module Sloc
     def find_target_files(paths)
       files = paths.uniq.flat_map do |path|
         if File.directory?(path)
-          Dir.glob("#{path}/**/*").select {|f| File.file?(f) }
+          Dir.glob("#{path}/**/*").select { |f| File.file?(f) }
         else
           path
         end
       end
 
-      files.map {|f| File.expand_path(f) }.uniq
+      files.map { |f| File.expand_path(f) }.uniq
     end
   end
 end
