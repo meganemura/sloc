@@ -7,6 +7,14 @@ module Sloc
     end
 
     def run(paths)
+      # TODO: formatted output
+      require 'pp'
+      pp report(paths)
+
+      nil
+    end
+
+    def report(paths)
       target_files = find_target_files(paths)
 
       # TODO: count sloc
@@ -18,11 +26,7 @@ module Sloc
         h[path] = analyzer.analyze(code, extension)
       end
 
-      # TODO: formatted output
-      require 'pp'
-      pp report
-
-      nil
+      report
     end
 
     private
