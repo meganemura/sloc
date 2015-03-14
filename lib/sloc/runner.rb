@@ -29,6 +29,8 @@ module Sloc
       report
         .sort_by { |_key, value| value[order] }   # --order=
         .tap { |hash| hash.reverse! if desc? }    # --desc
+
+      Hash[report]
     end
 
     private
