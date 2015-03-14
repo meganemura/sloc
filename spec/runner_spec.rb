@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe Sloc::Runner do
   let(:instance) do
-    described_class.new
+    described_class.new(options)
+  end
+
+  let(:options) do
+    {}
   end
 
   let(:files) do
@@ -10,8 +14,10 @@ describe Sloc::Runner do
   end
 
   describe '#report' do
-    it 'returns hash' do
-      expect(instance.report(files)).to be_a Hash
+    context 'with no options' do
+      it 'returns hash' do
+        expect(instance.report(files)).to be_a Hash
+      end
     end
   end
 end
