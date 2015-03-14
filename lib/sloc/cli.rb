@@ -18,7 +18,7 @@ module Sloc
     end
 
     def parse_options(args)
-      opts = Slop.parse! do |o|
+      opts = Slop.parse!(args) do |o|
         o.on('-h', '--help', 'Display this help message.')
       end
 
