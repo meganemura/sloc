@@ -26,14 +26,18 @@ module Sloc
         h[path] = @analyzer.analyze(code, extension)
       end
 
+      process_options(report)
+    end
+
+    private
+
+    def process_options(report)
       r = report
           .sort_by { |_key, value| value[order] }   # --order=
           .tap { |hash| hash.reverse! if desc? }    # --desc
 
       Hash[r]
     end
-
-    private
 
     def order
       key = @options[:order] ? @options[:order].to_sym : nil
