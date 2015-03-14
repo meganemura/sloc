@@ -9,14 +9,15 @@ module Sloc
 
     def run(args = ARGV)
       setup(args)
-      @runner.run(@paths)
+      if help?
+        puts help
+      else
+        @runner.run(@paths)
+      end
     end
 
     def setup(args)
       @options, @paths = parse_options(args)
-
-      return help if @paths.empty? || @options[:help]
-
       @runner = Runner.new(@options)
 
       nil
@@ -33,8 +34,11 @@ module Sloc
       [opts, args]
     end
 
-    def help
-      puts @options
+    attr_reader :options
+    alias_method :help, :options
+
+    def help?
+      @paths.empty? || @options[:help]
     end
   end
 end
