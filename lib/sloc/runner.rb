@@ -2,7 +2,7 @@ require 'sloc/analyzer'
 
 module Sloc
   class Runner
-    def initialize(options)
+    def initialize(options = {})
       @options = options
     end
 
