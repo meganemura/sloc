@@ -4,6 +4,7 @@ module Sloc
   class Runner
     def initialize(options = {})
       @options = options
+      @analyzer = Analyzer.new(@options)
     end
 
     def run(paths)
@@ -18,12 +19,11 @@ module Sloc
       target_files = find_target_files(paths)
 
       # TODO: count sloc
-      analyzer = Analyzer.new(@options)
       report = target_files.each_with_object({}) do |path, h|
         code      = File.read(path)
         extension = File.extname(path)
 
-        h[path] = analyzer.analyze(code, extension)
+        h[path] = @analyzer.analyze(code, extension)
       end
 
       report
