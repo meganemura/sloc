@@ -27,9 +27,15 @@ module Sloc
       end
 
       report
+        .sort_by { |_key, value| value[order] }   # --order=
     end
 
     private
+
+    def order
+      key = @options[:order] ? @options[:order].to_sym : nil
+      Analyzer::REPORT_KEYS.include?(key) ? key : Analyzer::REPORT_KEYS.first
+    end
 
     def find_target_files(paths)
       files = paths.uniq.flat_map do |path|

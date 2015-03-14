@@ -4,6 +4,8 @@ module Sloc
       @options = options
     end
 
+    REPORT_KEYS = [:total, :empty_lines, :single_comment]
+
     def analyze(code, extension)
       result = {}
 
