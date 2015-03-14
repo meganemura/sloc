@@ -12,7 +12,7 @@ module Sloc
       if help?
         puts help
       else
-        @runner.run(@paths)
+        puts @runner.run(@paths)
       end
     end
 
