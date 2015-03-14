@@ -11,7 +11,9 @@ module Sloc
 
       result[:total]          = code.scan("\n").size
       result[:empty_lines]    = code.scan(/^\s*$/).size
-      result[:single_comment] = code.scan(single_comment_expression(extension)).size
+
+      regexp = single_comment_expression(extension)
+      result[:single_comment] = regexp ? code.scan(regexp).size : 0
 
       result
     end
