@@ -16,6 +16,15 @@ module Sloc
       end
     end
 
+    def report(args = ARGV)
+      setup(args)
+      if help?
+        help
+      else
+        @runner.report(@paths)
+      end
+    end
+
     def setup(args)
       @options, @paths = parse_options(args)
       @runner = Runner.new(@options)
