@@ -65,11 +65,11 @@ module Sloc
         if File.directory?(path)
           Dir.glob("#{path}/**/*").select { |f| File.file?(f) }
         else
-          path
+          File.exist?(path) ? path : nil
         end
       end
 
-      files.map { |f| File.expand_path(f) }.uniq
+      files.compact.map { |f| File.expand_path(f) }.uniq
     end
   end
 end
