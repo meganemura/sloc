@@ -10,7 +10,7 @@ module Sloc
     def run(args = ARGV)
       @options, paths = parse_options(args)
 
-      return help if paths.empty?
+      return help if paths.empty? || @options[:help]
 
       runner = Runner.new(@options)
 
