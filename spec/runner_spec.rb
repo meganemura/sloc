@@ -13,10 +13,10 @@ describe Sloc::Runner do
     `git ls-files -z`.split("\x0")
   end
 
-  describe '#report' do
+  describe '#raw_report' do
     context 'with no options' do
       it 'returns hash' do
-        expect(instance.report(files)).to be_a Hash
+        expect(instance.raw_report(files)).to be_a Hash
       end
     end
 
@@ -25,8 +25,8 @@ describe Sloc::Runner do
         { order: Sloc::Analyzer::REPORT_KEYS.sample }
       end
 
-      let(:report) do
-        instance.report(files)
+      let(:raw_report) do
+        instance.raw_report(files)
       end
 
       let(:order) do
@@ -34,11 +34,11 @@ describe Sloc::Runner do
       end
 
       it 'returns hash' do
-        expect(report).to be_a Hash
+        expect(raw_report).to be_a Hash
       end
 
       it 'returns hash and it is ordered' do
-        report.each_cons(2) do |(_ak, av), (_bk, bv)|
+        raw_report.each_cons(2) do |(_ak, av), (_bk, bv)|
           expect(av[order] <= bv[order]).to be true
         end
       end

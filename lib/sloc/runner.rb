@@ -8,14 +8,17 @@ module Sloc
     end
 
     def run(paths)
-      # TODO: formatted output
-      require 'pp'
-      pp report(paths)
+      report(paths)
 
       nil
     end
 
     def report(paths)
+      require 'pp'
+      PP.pp(raw_report(paths), '')
+    end
+
+    def raw_report(paths)
       target_files = find_target_files(paths)
 
       # TODO: count sloc
