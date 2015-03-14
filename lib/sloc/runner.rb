@@ -36,7 +36,11 @@ module Sloc
           .sort_by { |_key, value| value[order] }   # --order=
           .tap { |hash| hash.reverse! if desc? }    # --desc
 
-      Hash[r]
+      if limit?
+        Hash[r.first(limitation)]
+      else
+        Hash[r]
+      end
     end
 
     def order
@@ -46,6 +50,14 @@ module Sloc
 
     def desc?
       @options[:desc]
+    end
+
+    def limit?
+      !limitation.nil?
+    end
+
+    def limitation
+      @options[:limit] ? [@options[:limit].to_i, 0].max : nil
     end
 
     def find_target_files(paths)
