@@ -26,11 +26,11 @@ module Sloc
         h[path] = @analyzer.analyze(code, extension)
       end
 
-      report
-        .sort_by { |_key, value| value[order] }   # --order=
-        .tap { |hash| hash.reverse! if desc? }    # --desc
+      r = report
+          .sort_by { |_key, value| value[order] }   # --order=
+          .tap { |hash| hash.reverse! if desc? }    # --desc
 
-      Hash[report]
+      Hash[r]
     end
 
     private
