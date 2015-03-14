@@ -20,6 +20,8 @@ module Sloc
     def parse_options(args)
       opts = Slop.parse!(args) do |o|
         o.on('-h', '--help', 'Display this help message.')
+        o.on('-o', '--order=', 'Specify key to order by.')
+        o.on('--desc', 'Reverse order if specified')
       end
 
       [opts, args]
