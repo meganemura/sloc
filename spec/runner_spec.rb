@@ -6,7 +6,9 @@ describe Sloc::Runner do
   end
 
   let(:options) do
-    {}
+    {
+      format: 'PrettyPrintFormatter',
+    }
   end
 
   let(:files) do

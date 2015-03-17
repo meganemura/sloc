@@ -12,10 +12,11 @@
 ```
 $ sloc
 Usage: sloc [options] fil1, file2, ...
-    -h, --help       Display this help message.
-    -o, --order      Specify key to order by.
-        --desc       Reverse order if specified.
-    -l, --limit      Specify key to set limitation of displaying file number.
+    -h, --help        Display this help message.
+    -o, --order       Specify key to order by.
+        --desc        Reverse order if specified.
+    -l, --limit       Specify key to set limitation of displaying file number.
+    -f, --format      Specify formatter class. (default: PrettyPrintFormatter)
 ```
 
 ## Credits

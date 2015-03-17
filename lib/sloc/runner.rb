@@ -1,4 +1,5 @@
 require 'sloc/analyzer'
+require 'sloc/formatters'
 
 module Sloc
   class Runner
@@ -12,8 +13,8 @@ module Sloc
     end
 
     def report(paths)
-      require 'pp'
-      PP.pp(raw_report(paths), '')
+      formatter = formatter_class.new(raw_report(paths))
+      formatter.format
     end
 
     def raw_report(paths)
@@ -31,6 +32,14 @@ module Sloc
     end
 
     private
+
+    def formatter_class
+      Formatters.formatters(formatter_class_name)
+    end
+
+    def formatter_class_name
+      @options[:format].to_sym
+    end
 
     def process_options(report)
       r = report

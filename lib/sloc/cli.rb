@@ -40,6 +40,8 @@ module Sloc
         o.on('-o', '--order=', 'Specify key to order by.')
         o.on('--desc', 'Reverse order if specified.')
         o.on('-l', '--limit=', 'Specify key to set limitation of displaying file number.')
+        o.on('-f', '--format=', 'Specify formatter class.',
+             default: 'PrettyPrintFormatter')
       end
 
       [opts, args]
