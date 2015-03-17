@@ -13,6 +13,12 @@ describe Sloc::Runner do
     `git ls-files -z`.split("\x0")
   end
 
+  describe '#run' do
+    it 'returns String' do
+      expect(instance.run(files)).to be_a String
+    end
+  end
+
   describe '#raw_report' do
     context 'with no options' do
       it 'returns hash' do
