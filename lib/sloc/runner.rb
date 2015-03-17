@@ -9,8 +9,6 @@ module Sloc
 
     def run(paths)
       report(paths)
-
-      nil
     end
 
     def report(paths)
